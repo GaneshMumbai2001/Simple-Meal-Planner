@@ -76,8 +76,8 @@ class MealPlanFrame(tk.Frame):
         
         self.meal_plan_text.delete(1.0, tk.END)
         for meal in self.meal_plan:
-            self.meal_plan_text.insert(tk.END, meal["name"] + "\n")
-            tk.Button(self, text=meal["name"], command=lambda m=meal: self.show_recipe(m), bg="#004d40", fg="white", font=("Helvetica", 12)).pack()
+            self.meal_plan_text.insert(tk.END, meal.get("name", "No Name") + "\n")
+            tk.Button(self, text=meal.get("name", "No Name"), command=lambda m=meal: self.show_recipe(m), bg="#004d40", fg="white", font=("Helvetica", 12)).pack()
     
     def show_recipe(self, meal):
         self.controller.frames["RecipeDetailFrame"].show_recipe(meal)
@@ -103,7 +103,7 @@ class GroceryListFrame(tk.Frame):
     def generate_grocery_list(self):
         all_ingredients = set()
         for meal in self.controller.frames["MealPlanFrame"].meal_plan:
-            all_ingredients.update(meal["ingredients"])
+            all_ingredients.update(meal.get("ingredients", []))
         
         available_ingredients = self.controller.frames["WelcomeFrame"].ingredients.get().split(', ')
         missing_ingredients = all_ingredients - set(available_ingredients)
@@ -119,8 +119,8 @@ class GroceryListFrame(tk.Frame):
     def show_meal_chart(self, meal):
         # Create a chart for the meal
         fig, ax = plt.subplots(figsize=(6, 4))
-        ax.bar(["Ingredients"], [len(meal["ingredients"])], color="#00796b")
-        ax.set_title(f"Ingredients for {meal['name']}")
+        ax.bar(["Ingredients"], [len(meal.get("ingredients", []))], color="#00796b")
+        ax.set_title(f"Ingredients for {meal.get('name', 'Meal')}")
         ax.set_ylabel("Count")
         
         # Embed the chart in the Tkinter window
@@ -142,9 +142,12 @@ class RecipeDetailFrame(tk.Frame):
         tk.Button(self, text="Back", command=lambda: controller.show_frame("MealPlanFrame"), bg="#00796b", fg="white", font=("Helvetica", 12)).pack(pady=10)
     
     def show_recipe(self, meal):
-        self.recipe_label.config(text=meal["name"])
-        self.recipe_text.delete(1.0, tk.END)
-        self.recipe_text.insert(tk.END, meal["recipe"])
+        if "name" in meal and "recipe" in meal:
+            self.recipe_label.config(text=meal["name"])
+            self.recipe_text.delete(1.0, tk.END)
+            self.recipe_text.insert(tk.END, meal["recipe"])
+        else:
+            messagebox.showerror("Error", "Recipe details are missing.")
 
 if __name__ == "__main__":
     app = MealPlannerApp()

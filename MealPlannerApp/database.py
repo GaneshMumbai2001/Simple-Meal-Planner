@@ -16,11 +16,16 @@ def get_recipes(dietary_preferences, allergies, ingredients):
     # Format the results
     recipe_list = []
     for recipe in recipes:
+        name = recipe[0]
+        ingredients_str = recipe[1] if recipe[1] else ''  # Handle NULL values
+        dietary_str = recipe[2] if recipe[2] else ''  # Handle NULL values
+        recipe_text = recipe[3] if recipe[3] else ''  # Handle NULL values
+        
         recipe_dict = {
-            "name": recipe[0],
-            "ingredients": recipe[1].split(', '),
-            "dietary": recipe[2].split(', '),
-            "recipe": recipe[3]
+            "name": name,
+            "ingredients": ingredients_str.split(', ') if ingredients_str else [],  # Handle empty strings
+            "dietary": dietary_str.split(', ') if dietary_str else [],  # Handle empty strings
+            "recipe": recipe_text
         }
         recipe_list.append(recipe_dict)
     
