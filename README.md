@@ -70,19 +70,15 @@ The Meal Planner app is a Python-based desktop application designed to help user
    ![Screenshot 2024-07-21 121006](https://github.com/user-attachments/assets/4534f8d2-b557-401f-b7fa-bc32ac989f8e)
 
 
-3. **Viewing Meal Plan:**
+2. **Viewing Meal Plan:**
 
    ![Screenshot 2024-07-21 121054](https://github.com/user-attachments/assets/957ccebb-b196-4d45-87a8-d8539b3aeec2)
 
 
-5. **Checking Grocery List:**
+3. **Checking Grocery List:**
 
    ![Screenshot 2024-07-21 121154](https://github.com/user-attachments/assets/7073c03a-0d30-4383-a046-ec965d07d1cd)
 
-
-6. **Viewing Recipe Details:**
-
-    ![Recipe Detail Frame](https://github.com/yourusername/meal-planner-app/blob/main/images/recipe_detail_frame.png)
 
 ## Troubleshooting
 
@@ -99,4 +95,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or feedback, please contact (ganeshmumbai2001@gmail.com).
+For any questions or feedback, please contact ganeshmumbai2001@gmail.com
