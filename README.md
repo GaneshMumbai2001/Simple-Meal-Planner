@@ -89,10 +89,6 @@ The Meal Planner app is a Python-based desktop application designed to help user
 
 Feel free to contribute to the project by opening issues or submitting pull requests. Contributions are welcome!
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
 For any questions or feedback, please contact ganeshmumbai2001@gmail.com
