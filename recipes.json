@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Spaghetti with Tomato Sauce",
+        "ingredients": ["spaghetti", "tomato sauce"],
+        "dietary": "vegetarian",
+        "recipe": "Cook spaghetti. Add tomato sauce."
+    },
+    {
+        "name": "Veggie Stir-fry",
+        "ingredients": ["vegetables", "soy sauce"],
+        "dietary": "vegan",
+        "recipe": "Stir-fry vegetables. Add soy sauce."
+    }
+]
