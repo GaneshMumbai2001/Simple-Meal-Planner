@@ -21,7 +21,7 @@ The Meal Planner app is a Python-based desktop application designed to help user
 1. **Clone the Repository:**
 
     ```powershell
-    git clone https://github.com/yourusername/meal-planner-app.git
+    git clone https://github.com/GaneshMumbai2001/Simple-Meal-Planner.git
     ```
 
 2. **Navigate to the Project Directory:**
